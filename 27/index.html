@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор с историей</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <h1>🧮 Калькулятор</h1>
+        
+        <!-- Калькулятор -->
+        <div class="calculator">
+            <div class="display">
+                <div class="history-display" id="historyDisplay"></div>
+                <div class="result-display" id="resultDisplay">0</div>
+            </div>
+            
+            <div class="buttons">
+                <button class="btn clear" onclick="clearAll()">C</button>
+                <button class="btn operator" onclick="appendOperator('(')">(</button>
+                <button class="btn operator" onclick="appendOperator(')')">)</button>
+                <button class="btn operator" onclick="appendOperator('/')">÷</button>
+                
+                <button class="btn number" onclick="appendNumber('7')">7</button>
+                <button class="btn number" onclick="appendNumber('8')">8</button>
+                <button class="btn number" onclick="appendNumber('9')">9</button>
+                <button class="btn operator" onclick="appendOperator('*')">×</button>
+                
+                <button class="btn number" onclick="appendNumber('4')">4</button>
+                <button class="btn number" onclick="appendNumber('5')">5</button>
+                <button class="btn number" onclick="appendNumber('6')">6</button>
+                <button class="btn operator" onclick="appendOperator('-')">−</button>
+                
+                <button class="btn number" onclick="appendNumber('1')">1</button>
+                <button class="btn number" onclick="appendNumber('2')">2</button>
+                <button class="btn number" onclick="appendNumber('3')">3</button>
+                <button class="btn operator" onclick="appendOperator('+')">+</button>
+                
+                <button class="btn zero" onclick="appendNumber('0')">0</button>
+                <button class="btn" onclick="appendDot()">.</button>
+                <button class="btn equals" onclick="calculate()">=</button>
+            </div>
+        </div>
+
+        <!-- История -->
+        <div class="history-section">
+            <div class="history-header">
+                <h2>📋 История</h2>
+                <button class="clear-history-btn" onclick="clearHistory()">🗑️ Очистить</button>
+            </div>
+            <div id="historyContainer"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

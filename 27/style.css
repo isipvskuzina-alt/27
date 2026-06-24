@@ -1,0 +1,307 @@
+/* ========================================
+   РАБОТА С ФОНОМ
+   ======================================== */
+
+/* ===== 1. background-color ===== */
+body {
+    background-color: #f0f2f5;  /* Цвет фона всей страницы */
+}
+
+.calculator {
+    background-color: #1a1a2e;   /* Тёмный фон калькулятора */
+}
+
+.display {
+    background-color: #0f0e17;   /* Фон дисплея */
+}
+
+.btn {
+    background-color: #2a2a4a;   /* Цвет кнопок */
+}
+
+.btn:hover {
+    background-color: #3a3a5a;   /* Цвет при наведении */
+}
+
+/* ===== 2. background-image ===== */
+.app {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.03"><circle cx="50" cy="50" r="40" fill="none" stroke="%236c5ce7" stroke-width="2"/><circle cx="50" cy="50" r="25" fill="none" stroke="%236c5ce7" stroke-width="1"/><circle cx="50" cy="50" r="10" fill="%236c5ce7" opacity="0.3"/></svg>');
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+/* ===== 3. background-size ===== */
+.btn {
+    background-size: cover;
+}
+
+.history-item:nth-child(even) {
+    background-image: linear-gradient(90deg, #f8f9fa, #ffffff);
+    background-size: 100% 100%;
+}
+
+/* ===== 4. background-repeat ===== */
+.background-pattern {
+    background-repeat: repeat;    /* Повторять по горизонтали и вертикали */
+    background-repeat: repeat-x;  /* Только по горизонтали */
+    background-repeat: repeat-y;  /* Только по вертикали */
+    background-repeat: no-repeat; /* Не повторять */
+}
+
+/* ========================================
+   ОБЩИЕ СТИЛИ
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    max-width: 450px;
+    width: 100%;
+    padding: 25px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2d3436;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #2d3436;
+}
+
+/* ========================================
+   КАЛЬКУЛЯТОР
+   ======================================== */
+
+.calculator {
+    background-color: #1a1a2e;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.display {
+    background-color: #0f0e17;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.history-display {
+    color: #636e72;
+    font-size: 14px;
+    min-height: 20px;
+    font-family: 'Courier New', monospace;
+}
+
+.result-display {
+    color: #fffffe;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    word-break: break-all;
+    text-align: right;
+    width: 100%;
+}
+
+/* ========================================
+   КНОПКИ
+   ======================================== */
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 18px 0;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+    background-color: #2a2a4a;
+    color: #fffffe;
+}
+
+.btn:hover {
+    background-color: #3a3a5a;
+    transform: scale(1.02);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn.number {
+    background-color: #2a2a4a;
+}
+
+.btn.number:hover {
+    background-color: #3a3a5a;
+}
+
+.btn.operator {
+    background-color: #3a2a4a;
+    color: #a29bfe;
+}
+
+.btn.operator:hover {
+    background-color: #4a3a5a;
+}
+
+.btn.clear {
+    background-color: #4a2a2a;
+    color: #fd79a8;
+}
+
+.btn.clear:hover {
+    background-color: #5a3a3a;
+}
+
+.btn.equals {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    color: white;
+}
+
+.btn.equals:hover {
+    background: linear-gradient(135deg, #5a4bd1, #8a7bfe);
+}
+
+.btn.zero {
+    grid-column: span 1;
+}
+
+/* ========================================
+   ИСТОРИЯ
+   ======================================== */
+
+.history-section {
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.clear-history-btn {
+    padding: 4px 14px;
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.clear-history-btn:hover {
+    background-color: #fca5a5;
+}
+
+#historyContainer {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.history-item:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.history-item .expression {
+    color: #636e72;
+}
+
+.history-item .result {
+    color: #6c5ce7;
+    font-weight: 700;
+}
+
+.history-empty {
+    text-align: center;
+    color: #b2bec3;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* ========================================
+   АНИМАЦИИ
+   ======================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   АДАПТИВНОСТЬ
+   ======================================== */
+
+@media (max-width: 450px) {
+    .app {
+        padding: 15px;
+    }
+    
+    .btn {
+        padding: 14px 0;
+        font-size: 18px;
+    }
+    
+    .result-display {
+        font-size: 28px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+}
